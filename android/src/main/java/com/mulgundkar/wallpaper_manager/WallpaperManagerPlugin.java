@@ -19,6 +19,7 @@ import java.io.InputStream;
 import java.lang.reflect.Array;
 
 import androidx.annotation.NonNull;
+import io.flutter.FlutterInjector;
 import io.flutter.Log;
 import io.flutter.app.FlutterApplication;
 import io.flutter.embedding.engine.FlutterEngine;
@@ -126,7 +127,7 @@ public class WallpaperManagerPlugin implements FlutterPlugin, MethodCallHandler 
                 Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
                 result = wm.setBitmap(bitmap, null, false, wallpaperLocation);
             } else {
-                String assetLookupKey = FlutterLoader.getInstance().getLookupKeyForAsset(assetPath);
+                String assetLookupKey = FlutterInjector.instance().flutterLoader().getLookupKeyForAsset(assetPath);
                 AssetManager assetManager = context.getAssets();
                 AssetFileDescriptor assetFileDescriptor = assetManager.openFd(assetLookupKey);
                 InputStream inputStream = assetFileDescriptor.createInputStream();
@@ -149,7 +150,7 @@ public class WallpaperManagerPlugin implements FlutterPlugin, MethodCallHandler 
                 Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
                 result = wm.setBitmap(bitmap, new Rect(left, top, right, bottom), false, wallpaperLocation);
             } else {
-                String assetLookupKey = FlutterLoader.getInstance().getLookupKeyForAsset(assetPath);
+                String assetLookupKey = FlutterInjector.instance().flutterLoader().getLookupKeyForAsset(assetPath);
                 AssetManager assetManager = context.getAssets();
                 AssetFileDescriptor assetFileDescriptor = assetManager.openFd(assetLookupKey);
                 InputStream inputStream = assetFileDescriptor.createInputStream();
