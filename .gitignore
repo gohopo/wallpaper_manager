@@ -1,22 +1,30 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
 .DS_Store
-.dart_tool/
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
 
-.packages
-.pub/
-
-build/
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
 .idea/
-.idea/workspace.xml
-example/android/app/.classpath
-.idea/codeStyles/Project.xml
-.idea/workspace.xml
-android/.classpath
-android/.project
-android/.settings/org.eclipse.buildship.core.prefs
-android/gradle/wrapper/gradle-wrapper.properties
-example/android/app/.settings/org.eclipse.buildship.core.prefs
-example/android/app/.project
-example/android/.settings/org.eclipse.buildship.core.prefs
-example/android/.project
-.idea/libraries/Flutter_Plugins.xml
-android/src/main/java/com/mulgundkar/wallpaper_manager/WallpaperManagerPlugin.java___jb_old___
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+# Libraries should not include pubspec.lock, per https://dart.dev/guides/libraries/private-files#pubspeclock.
+/pubspec.lock
+**/doc/api/
+.dart_tool/
+.packages
+build/
